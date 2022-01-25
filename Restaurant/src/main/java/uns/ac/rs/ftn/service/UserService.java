@@ -45,7 +45,7 @@ public class UserService implements ServiceInterface<User> {
         u.setLastName(entity.getLastName());
         u.setEmail(entity.getEmail());
 
-        List<Authority> auth = authService.findByName("ROLE_USER");
+        List<Authority> auth = authService.findByName("ROLE_BARTENDER");// tu dodati sta treba
         // u primeru se registruju samo obicni korisnici i u skladu sa tim im se i dodeljuje samo rola USER
         u.setAuthorities(auth);
 

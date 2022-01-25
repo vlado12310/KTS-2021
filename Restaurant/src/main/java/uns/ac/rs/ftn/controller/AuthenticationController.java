@@ -17,6 +17,7 @@ import uns.ac.rs.ftn.dto.UserDTO;
 import uns.ac.rs.ftn.dto.UserLoginDTO;
 import uns.ac.rs.ftn.dto.UserTokenStateDTO;
 import uns.ac.rs.ftn.helper.UserMapper;
+import uns.ac.rs.ftn.model.Authority;
 import uns.ac.rs.ftn.model.User;
 import uns.ac.rs.ftn.security.TokenUtils;
 import uns.ac.rs.ftn.service.CustomUserDetailsService;
@@ -24,6 +25,7 @@ import uns.ac.rs.ftn.service.UserService;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.List;
 
 //Kontroler zaduzen za autentifikaciju korisnika
 @RestController
@@ -59,7 +61,7 @@ public class AuthenticationController {
 
         // Kreiraj token za tog korisnika
         User user = (User) authentication.getPrincipal();
-        String jwt = tokenUtils.generateToken(user.getEmail()); // prijavljujemo se na sistem sa email adresom
+        String jwt = tokenUtils.generateToken(user.getEmail(), (List<Authority>) user.getAuthorities()); // prijavljujemo se na sistem sa email adresom
         int expiresIn = tokenUtils.getExpiredIn();
 
         // Vrati token kao odgovor na uspesnu autentifikaciju

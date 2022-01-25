@@ -16,5 +16,3 @@ INSERT INTO USER_AUTHORITY (user_id, authority_id) VALUES (1, 1); -- menadzer ha
 INSERT INTO USER_AUTHORITY (user_id, authority_id) VALUES (2, 2); -- sanker has ROLE_BARTENDER
 INSERT INTO USER_AUTHORITY (user_id, authority_id) VALUES (3, 3); -- konobar has ROLE_WAITER
 INSERT INTO USER_AUTHORITY (user_id, authority_id) VALUES (4, 4); -- kuvar has ROLE_COOK
-
-INSERT INTO DRINK_TABLE (name,price) VALUES ('VINJAK', 3);

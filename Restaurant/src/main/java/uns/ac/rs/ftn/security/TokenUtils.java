@@ -7,17 +7,19 @@ import io.jsonwebtoken.SignatureAlgorithm;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
+import uns.ac.rs.ftn.model.Authority;
 import uns.ac.rs.ftn.model.User;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
+import java.util.List;
 
 // Utility klasa za rad sa JSON Web Tokenima
 @Component
 public class TokenUtils {
 
     // Izdavac tokena
-    @Value("spring-security-example")
+    @Value("Restaurant")
     private String APP_NAME;
 
     // Tajna koju samo backend aplikacija treba da zna kako bi mogla da generise i proveri JWT https://jwt.io/
@@ -42,13 +44,14 @@ public class TokenUtils {
     private SignatureAlgorithm SIGNATURE_ALGORITHM = SignatureAlgorithm.HS512;
 
     // Funkcija za generisanje JWT token
-    public String generateToken(String username) {
+    public String generateToken(String username, List<Authority> authorities) {
         return Jwts.builder()
                 .setIssuer(APP_NAME)
                 .setSubject(username)
                 .setAudience(generateAudience())
                 .setIssuedAt(new Date())
                 .setExpiration(generateExpirationDate())
+                .claim("Authorities",authorities)
                 // .claim("key", value) //moguce je postavljanje proizvoljnih podataka u telo JWT tokena
                 .signWith(SIGNATURE_ALGORITHM, SECRET).compact();
     }

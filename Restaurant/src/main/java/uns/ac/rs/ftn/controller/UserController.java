@@ -32,7 +32,7 @@ public class UserController {
             zaglavlje (metapodatke)
             HTTP status kod
     */
-    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    //pos@PreAuthorize("hasRole('ROLE_ADMIN')")
     @RequestMapping(method = RequestMethod.GET)
     public ResponseEntity<List<UserDTO>> getAllUsers() {
         List<User> users = userService.findAll();
