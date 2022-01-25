@@ -1,0 +1,17 @@
+<div class="input-container">
+    <div *ngIf="hasCaption()" class="input-caption">
+        <label>{{caption}}</label>
+    </div>
+    <div class="input"
+        [class.required]="requiredValidation()">
+        <div *ngIf="hasIcon()" class="input-icon-container">
+            <fa-icon [icon]="icon" class="input-icon"></fa-icon>
+        </div>
+        <div class="input-field-container">
+            <input [type]="type" [placeholder]="placeholder" class="input-field" (focusout)="visit()" #input>
+        </div>
+    </div>
+    <div class="input-validation-error-message">
+        <label *ngIf="requiredValidation()" class="validation-error">{{validationMessage}}</label>
+    </div>
+</div>

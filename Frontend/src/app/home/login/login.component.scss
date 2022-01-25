@@ -1,0 +1,13 @@
+@import 'colors.scss';
+
+.login-form {
+    width: 400px;
+    background-color: $login-backgroud-color;
+    padding: 20px;
+}
+
+.login-title {
+    color: $login-title-color;
+    font-weight: $login-title-width;
+    font-size: 30px;
+}

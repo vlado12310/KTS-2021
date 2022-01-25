@@ -1,0 +1,6 @@
+<div class="login-form">
+    <label class="login-title">Login</label>
+    <shared-input [placeholder]="'Username'" [icon]="usernameIcon" [required]="'Username is required.'"></shared-input>
+    <shared-input [placeholder]="'Password'" [icon]="passwordIcon" [required]="'Password is required.'" type="Password"></shared-input>
+    <shared-button [text]="'Login'" id="login-button" (onClick)="login()"></shared-button>
+</div>

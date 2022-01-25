@@ -1,0 +1,61 @@
+@import 'colors.scss';
+@import 'layout.scss';
+
+.input-container {
+    margin-top: 10px;
+}
+
+.input {
+    display: flex;
+    height: 30px;
+    border: 1px solid $input-border-color;
+    border-radius: $input-border-radius;
+    background-color: $input-backgroung-color;
+}
+
+.required {
+    border: 2px solid $input-border-error-color;
+}
+
+.input-icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 100%;
+    background-color: $input-icon-background-color;
+    color: $input-icon-text-color;
+}
+
+.input-icon {
+    display: flex;
+}
+
+.input-field-container {
+    margin-left: 5px;
+    display: flex;
+    flex-grow: 1;
+}
+
+.input-field {
+    width: 100%;
+    border-radius: $input-border-radius;
+    background-color: $input-backgroung-color;
+    color: $input-text-color;
+    border: 0;
+}
+
+.input-field:focus {
+    outline: none;
+}
+
+.input-validation-error-message {
+    margin-top: 5px;
+    height: 20px;
+}
+
+.validation-error {
+    font-size: 12px;
+    font-weight: bold;
+    color: $input-error-color;
+}

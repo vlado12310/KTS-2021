@@ -1,0 +1,19 @@
+@import 'colors.scss';
+@import 'layout.scss';
+
+.button-container {
+    width: 100%;
+    height: $button-height;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $button-background-blue;
+    color: $white;
+    border-radius: $button-border-radius;
+}
+
+.button-label {
+    height: 20px;
+    font-weight: bold;
+    color: $button-text-blue;
+}
